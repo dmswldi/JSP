@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+
+includer.jsp에서 지정한 번호: <%= number %>
+<p>
+<%
+	String dataFolder = "c:\\data";
+%>
+<!-- .jspf는 jsp의 조각이란 뜻! -->

@@ -13,4 +13,30 @@
   <session-config>
   	<session-timeout>30</session-timeout>
   </session-config>
+  
+  <!-- <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>/chap07/include-directive/test/*</url-pattern>
+  		<include-prelude>/chap07/include-directive/test/test-header1.jspf</include-prelude>
+  		<include-coda>/chap07/include-directive/test/test-footer1.jspf</include-coda>
+  	</jsp-property-group>
+  	
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<include-prelude>/chap07/include-directive/test/test-header2.jspf</include-prelude>
+  		<include-coda>/chap07/include-directive/test/test-footer2.jspf</include-coda>
+  	</jsp-property-group>
+  </jsp-config> -->
+  
+  <context-param>
+  	<description>로깅 여부</description> <!-- 단순 설명, 생략 가능 -->
+  	<param-name>logEnable</param-name>
+  	<param-value>true</param-value>
+  </context-param>
+  <!-- 실제로 이렇게 설정되는 건 아니고 그냥 이렇게 쓰는 거,,, -->
+  <context-param>
+  	<description>디버깅 레벨</description>
+  	<param-name>debugLevel</param-name>
+  	<param-value>5</param-value>
+  </context-param>
 </web-app>

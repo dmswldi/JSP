@@ -17,6 +17,7 @@
 String code = request.getParameter("code");
 String viewPageURI = null;
 
+// forward 된 페이지에서: WebContent 기준으로 경로 찾거나(절대 경로) 현재 위치 기준으로(상대 경로) 찾기! 
 if(code.equals("A")) viewPageURI = "/chap07/viewModule/a.jsp"; // 왜 myjsp를 WebContent 안에서 찾지? 언제 컨텍스트패스를 쓰는 거야 그럼?
 // request.getContextPath()는 '/myjsp'라서 WebContent 안에서 myjsp 찾으니까 없어서 안 됨
 else if(code.equals("B")) viewPageURI ="../viewModule/b.jsp";
