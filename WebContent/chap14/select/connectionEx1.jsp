@@ -8,7 +8,7 @@
 	String sql = "Select * from city";
 	// 1. jdbc 드라이버 로딩
 	//Class.forName("oracle.jdbc.driver.OracleDriver");// jar 파일에 들어 있음, 외부 library는 lib에
-	Class.forName("com.mysql.jdbc.Driver");
+	Class.forName("com.mysql.cj.jdbc.Driver");
 	
 	// 2. 데이터베이스 커넥션 구함
 	Connection con = null;

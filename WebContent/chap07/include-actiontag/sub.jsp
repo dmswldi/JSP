@@ -3,3 +3,6 @@
 <p>
 sub.jsp에서 생성한 내용.
 </p>
+<%
+//response.sendRedirect("top.jsp");
+%>
