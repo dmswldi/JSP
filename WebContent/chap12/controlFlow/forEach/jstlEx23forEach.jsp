@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+<%
+Map<String, String> map = new HashMap<>();
+map.put("key1", "value1");
+map.put("key2", "value2");
+map.put("key3", "value3");
+map.put("key4", "value4");
+map.put("key5", "value5");
 
-<%= request %>
-
+request.setAttribute("myMap", map);
+%>
+<ul>
+<c:forEach items="${myMap }" var="myEntry" varStatus="status">
+	<li>${myEntry.key } : ${myEntry.value }</li> <br />
+</c:forEach>
+</ul>
 </body>
 </html>

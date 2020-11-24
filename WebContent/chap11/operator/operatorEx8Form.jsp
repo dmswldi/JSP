@@ -13,11 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h1>empty 연산자</h1>
+<form action="operatorEx8View.jsp" method="post">
+이름: <input type="text" name="name" /> <br />
+동의: <input type="checkbox" name="accept" /> <br />
+<input type="submit" value="등록" />
+</form>
 </body>
 </html>

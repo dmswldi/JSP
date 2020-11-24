@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<%-- 하나의 when만 실행 --%>
+<c:choose>
+	<c:when test="false">
+		<h1>hello 1</h1>
+	</c:when>
+	<c:when test="false">
+		<h1>hello 2</h1>
+	</c:when>
+	<c:otherwise>
+		<h1>hello 3</h1>
+	</c:otherwise>
+</c:choose>
 </body>
 </html>

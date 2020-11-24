@@ -13,11 +13,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h3>and</h3>
+${true && true } <br />
+${true && false } <br />
+${false && true } <br />
+${false && false}
+<hr />
+${true and true } <br />
+${true and false } <br />
+${false and true } <br />
+${false and false}
+<hr />
+<h3>or</h3>
+${true || true } <br />
+${true || false } <br />
+${false || true } <br />
+${false || false}
+<hr />
+${true or true } <br />
+${true or false } <br />
+${false or true } <br />
+${false or false}
+<hr />
+<h3>not</h3>
+${! true } <br />
+${! false }
+<hr />
+${not true } <br />
+${not false }
 </body>
 </html>

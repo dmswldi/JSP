@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h1>구구단 2-9단</h1>
+<c:forEach var="i" begin="1" end="9">
+	<h3>${i }단</h3>
+	<c:forEach var="j" begin="1" end="9" step="2">
+		${i } &times; ${j } &equals; ${i * j } <br />
+	</c:forEach>
+	<hr />
+</c:forEach>
 </body>
 </html>

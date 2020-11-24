@@ -13,11 +13,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+이름 : ${param.name } <br />
+동의 : ${not empty param.accept } <%-- 동의면 --%>
+<br />
+동의 : ${! empty param.accept }
 </body>
 </html>

@@ -13,11 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h1>el 비교 연산자</h1>
+<form action="operatorEx5View.jsp">
+<input type="text" name="param1" /> <br />
+<input type="text" name="param2" /> <br />
+<input type="submit" value="비교연산" />
+</form>
 </body>
 </html>

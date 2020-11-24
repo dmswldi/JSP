@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+<h1>forEach 연습</h1>
+<form action="jstlEx19View.jsp">
+<label for="banana">바나나<input type="checkbox" name="food" id="banana" value="banana" /></label>
+<label for="water">물<input type="checkbox" name="food" id="water" value="water" /></label>
+<label for="coffee">커피<input type="checkbox" name="food" id="coffee" value="coffee" /></label>
+<label for="candy">사탕<input type="checkbox" name="food" id="candy" value="candy" /></label>
+<label for="choco">초콜릿<input type="checkbox" name="food" id="choco" value="choco" /></label>
 
-<%= request %>
-
+<input type="submit" value="등록" />
+</form>
 </body>
 </html>

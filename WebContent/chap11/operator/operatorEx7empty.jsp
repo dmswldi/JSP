@@ -13,11 +13,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+<h3>empty</h3>
+null : ${empty abc } <br />
+"": ${empty "" } <br />
 
-<%= request %>
+<%
+List list = new ArrayList();
+pageContext.setAttribute("list", list);// set 해줘야 el이 읽지 !!!
+%>
+list: ${empty list } <br />
 
+<%
+Map map = new HashMap();
+pageContext.setAttribute("map", map);
+%>
+map: ${empty map } <br />
+
+<%
+Collection col = new ArrayList();
+pageContext.setAttribute("col", col);
+%>
+col: ${empty col } <br />
+
+<hr />
+
+${not empty abc } <br />
 </body>
 </html>

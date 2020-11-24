@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +13,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+<c:set var="myvar1" value="my value1" scope="page"></c:set> <%-- default: page attribute --%>
+<c:set var="myvar2" value="my value1, page" scope="page"></c:set>
+<c:set var="myvar2" value="my value2, request" scope="request"></c:set>
 
-<%= request %>
-
+${myvar1 } <br />
+${myvar2 } <br />
+${requestScope.myvar2 } <br />
 </body>
 </html>

@@ -13,11 +13,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+${cookie["JSESSIONID"].name } <br />
+${cookie.JSESSIONID.name } <br />
+${cookie["JSESSIONID"].value } <br />
 </body>
 </html>

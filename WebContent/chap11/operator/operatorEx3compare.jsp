@@ -13,11 +13,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+${3 == 3 } <br />
+${3 eq 3 } <br />
+<hr />
+${3 != 4 } <br />
+<%-- ${3 ne 4 } <br /> --%>
+<hr />
+${3 < 4 } <br />
+${3 lt 4 } <br />
+<hr />
+${4 > 3 } <br />
+${4 gt 3 } <br />
+<hr />
+${3 <= 4 } <br />
+${3 le 4 } <br />
+<hr />
+${4 >= 3 } <br />
+${4 ge 3 } <br />
 </body>
 </html>

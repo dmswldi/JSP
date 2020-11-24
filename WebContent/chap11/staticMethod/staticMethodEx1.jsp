@@ -13,11 +13,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h2>static method 호출</h2>
+${Math.abs(-5) } <br />
+${Math.random() } <br />
+${Math.round(3.14) } <br />
+<hr />
+<%
+// round에 null 입력 X, 영역에 넣기
+double num = 5.5;
+pageContext.setAttribute("num", num);
+%>
+${Math.round(num) }
 </body>
 </html>

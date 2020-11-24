@@ -13,6 +13,7 @@
 </head>
 <body>
 <%-- null 처리도 알아서 해줌 ㅎㅎ --%>
+${param } <br />
 이름 : ${param.name } <br />
 암호: ${param.password } <br />
 이메일: ${param.email }

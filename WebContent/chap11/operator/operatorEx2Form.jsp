@@ -13,11 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h1>el 산술 연산</h1>
+<form action="operatorEx2View.jsp" method="post">
+첫 번째 값 : <input type="text" name="num1" /> <br />
+두 번째 값 : <input type="text" name="num2" /> <br />
+<input type="submit" value="산술 연산" />
+</form>
 </body>
 </html>

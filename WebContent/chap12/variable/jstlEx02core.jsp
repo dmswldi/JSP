@@ -13,11 +13,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<h1>JSTL core 태그들</h1>
+<h3>책 295쪽</h3>
+<ul>
+<li>set</li>
+<li>remove</li>
+<li>if</li>
+<li>choose</li>
+<li>forEach</li>
+<li>forTokens</li>
+<li>import</li>
+<li>redirect</li>
+<li>url</li>
+<li>catch</li>
+<li>out</li>
+</ul>
 </body>
 </html>

@@ -17,7 +17,7 @@
 ${param }
 <br />
 ${param.name } <br />
-${param["name"]" } <br />
+${param["name"] } <br />
 
 </body>
 </html>

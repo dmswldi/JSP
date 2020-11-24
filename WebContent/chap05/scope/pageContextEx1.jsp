@@ -22,7 +22,14 @@ request.setAttribute("reqAttr1", "reqVal1");
 
 <!-- 같은 페이지에서 attribute 꺼내기 -->
 <%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %>
+<%= request.getAttribute("reqAttr1") %> <br>
+
+<%= request %>
+<%--
+HttpServletRequest
+여기 : org.apache.catalina.connector.RequestFacade@ : request 래핑한 앞면 클래스
+저기 : org.apache.catalina.core.ApplicationHttpRequest@
+ --%>
 
 <jsp:include page="pageContextEx1Sub.jsp"></jsp:include> <!-- 실행 결과값을 포함, 같은 request 영역 -->
 <!-- 이 과정에서 request 객체를 래핑해서 넘겨줌. : 확인!!!!!! => 같은 request 객체로 봐도 무방 -->

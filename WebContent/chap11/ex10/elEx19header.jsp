@@ -13,11 +13,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+<h1>header</h1>
+<%= request.getHeader("cookie") %> <br />
 
-<%= request %>
+<%= request.getCookies()[0].getName() %> <br />
+<%= request.getCookies()[0].getValue() %> <br />
 
+${header.cookie } <br />
 </body>
 </html>

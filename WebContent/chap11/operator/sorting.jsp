@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<%
+String[] array = {"가", "3", "a", "A", "Z"};
+List<String> list = Arrays.asList(array);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +16,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<%
+Arrays.sort(array);
+Arrays.sort(array, Collections.reverseOrder());
+Collections.sort(list);
+Collections.reverse(list);
+%>
+Arrays.sort: 
+<% 
+for(String s : array){
+	System.out.print(s + " ");
+}
+System.out.println();
+%>
+<hr />
+Collections.sort(): <% list.forEach(x -> System.out.print(x + " ")); %> <%-- 3 A Z a 가 --%>
+<br />
+<%= list %>
 </body>
 </html>

@@ -13,11 +13,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+${4 + 5 } <br />
+${3 - 7 } <br />
+${9 * 9 } <br />
+${15 / 2 } <br />
+<%-- ${15 div 2 } <br /> --%>
+${31 % 3 } <br />
+${31 mod 3 } <br />
 
-<%= request %>
-
+${"10" + 5 } <br />
+<%-- ${"ten" + 5 } --%>
+${abc + 5 } <br /> <%-- null은 0 처리 --%>
 </body>
 </html>

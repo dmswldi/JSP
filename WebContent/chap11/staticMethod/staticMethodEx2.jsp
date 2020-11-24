@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<%@ page import="chap11.MyClass" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+${MyClass.myMethod() } <br />
+<%-- 굳이 쓸 일 별로 없다 --%>
 </body>
 </html>

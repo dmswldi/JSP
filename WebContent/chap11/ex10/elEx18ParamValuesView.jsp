@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<%
+	String[] foods = request.getParameterValues("food");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
+<ul>
+<%
+for(String food : foods){
+%>
+	<li><%= food %></li>
+<%
+}
+%>
+<hr />
 
-<%= request %>
-
+${paramValues.food[0] } <br />
+${paramValues.food[1] } <br />
+${paramValues.food[2] } <br /> <%-- 없으면 씹힘 --%>
+${paramValues.food[3] } <br />
+${paramValues.food[4] } <br />
+</ul>
 </body>
 </html>

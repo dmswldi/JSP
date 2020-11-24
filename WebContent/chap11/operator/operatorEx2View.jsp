@@ -13,11 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
+<h1>더한 값 : ${param.num1 + param.num2 }</h1>
+<h1>뺀 값 : ${param.num1 - param.num2 }</h1>
+<h1>곱한 값 : ${param.num1 * param.num2 }</h1>
+<h1>나눈 값 : ${param.num1 / param.num2 }</h1>
+<h1>나눈 값 : ${param.num1 div param.num2 }</h1>
+<h1>나머지 값 : ${param.num1 % param.num2 }</h1>
+<h1>나머지 값 : ${param.num1 mod param.num2 }</h1>
 
 </body>
 </html>

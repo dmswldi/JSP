@@ -13,11 +13,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>pageContext sub</h1>
-<%= pageContext.getAttribute("pageAttr1") %> <br>
-<%= request.getAttribute("reqAttr1") %> <br>
-
-<%= request %>
-
+<!-- 
+${"a" == "a" }
+<hr />
+${"a" < "b" }
+<hr />
+${"11" < "2" } <%-- true, 사전 순 --%>
+<hr />
+${"11" < 2 } <%-- false, 숫자로 변경 --%>
+<hr />
+${"11" > 2 } <%-- true --%>
+ -->
 </body>
 </html>
