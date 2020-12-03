@@ -39,4 +39,90 @@
   	<param-name>debugLevel</param-name>
   	<param-value>5</param-value>
   </context-param>
+  
+
+  <!-- servlet 만들 때마다 web.xml에 등록해야 함(사용할 servlet 등록) or annotation으로 -->
+  <servlet>
+  	<servlet-name>servletEx01</servlet-name>
+  	<servlet-class>chap17.ServletEx01</servlet-class>
+  </servlet>
+  
+  <!-- servlet이 일을 하도록, 경로 지정 -->
+  <servlet-mapping>
+  	<servlet-name>servletEx01</servlet-name>
+  	<url-pattern>/ex01</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>servletEx01</servlet-name>
+  	<url-pattern>/ex011</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Servlet9</servlet-name>
+  	<servlet-class>chap17.ServletEx09</servlet-class>
+  	<init-param>
+  		<param-name>dburl</param-name>
+  		<param-value>jdbc:oracle:thin:@localhost:1521:orcl</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>dbid</param-name>
+  		<param-value>c##mydbms</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>dbpw</param-name>
+  		<param-value>admin</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Servlet9</servlet-name>
+  	<url-pattern>/ex09</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ControllerUsingURI</servlet-name>
+  	<servlet-class>chap18.ControllerUsingURI</servlet-class>
+  	<init-param>
+  		<param-name>configFile</param-name>
+  		<param-value>/WEB-INF/commandHandlerURI.properties</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ControllerUsingURI</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <filter>
+  	<filter-name>filter01</filter-name>
+  	<filter-class>chap19.Filter01</filter-class>
+  </filter>
+  
+  <filter>
+  	<filter-name>filter02</filter-name>
+  	<filter-class>chap19.Filter02</filter-class>
+  </filter>
+  
+  <filter>
+  	<filter-name>request-encoding</filter-name>
+  	<filter-class>chap19.Filter03ReqEncoding</filter-class>
+  </filter>
+
+  <filter-mapping>
+  	<filter-name>filter02</filter-name>
+  	<url-pattern>/filter/ex01</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>filter01</filter-name>
+  	<url-pattern>/filter/*</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping> 
+  	<filter-name>request-encoding</filter-name>
+  	<url-pattern>/filter/*</url-pattern> <!-- 모든 경로 /* -->
+  </filter-mapping>
 </web-app>
