@@ -10,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import chap05.Post;
+import chap20.DBUtil;
 
 /**
  * Servlet implementation class AddServlet
@@ -40,6 +42,7 @@ public class AddServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		request.setCharacterEncoding("utf-8");// 언어 체크할 것!!! 프젝에서 필터로 넣을 예정
 		String title = request.getParameter("title");
 		String body = request.getParameter("body");
@@ -57,10 +60,17 @@ public class AddServlet extends HttpServlet {
 				System.out.println("insert 성공");
 			} else {
 				System.out.println("insert 오류...");
+				// alert : 게시물 등록 실패
 			}
+		} else {
+			// alert : 제목과 내용을 입력하세요
+			session.setAttribute("title", title);
+			session.setAttribute("body", body);
+			session.setAttribute("message", "Please enter both the title and the content.");
 		}
 		
 		response.sendRedirect("main");
+		
 	}
 
 	private int insert(Post post) {
@@ -68,19 +78,9 @@ public class AddServlet extends HttpServlet {
 				+ "VALUES (?, ?)";
 		
 		int row = 0;
-		// 1. 드라이버 로딩
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		}
-	
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String id = "c##mydbms";
-		String pw = "admin";
 		
 		try (// 2. 연결 생성
-			Connection con = DriverManager.getConnection(url, id, pw);
+			Connection con = DBUtil.getConnection();
 			// 3. Statement 생성
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			){

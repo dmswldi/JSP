@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import chap05.Post;
+import chap20.DBUtil;
 
 /**
  * Servlet implementation class MainServlet
@@ -51,20 +52,10 @@ public class MainServlet extends HttpServlet {
 		
 		String sql = "SELECT id, title FROM post "
 				+ "ORDER BY id DESC";
-		
-		// 1. 드라이버 로딩
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		}
-	
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String id = "c##mydbms";
-		String pw = "admin";
+
 		
 		try (// 2. 연결 생성
-			Connection con = DriverManager.getConnection(url, id, pw);
+			Connection con = DBUtil.getConnection();
 			// 3. Statement 생성
 			Statement stmt = con.createStatement();
 			){

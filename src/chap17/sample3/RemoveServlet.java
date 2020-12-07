@@ -3,13 +3,15 @@ package chap17.sample3;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import chap20.DBUtil;
 
 
 /**
@@ -43,26 +45,17 @@ public class RemoveServlet extends HttpServlet {
 	
 	private boolean remove(String id) {
 		String sql = "DELETE post "// 띄어쓰기 필수!!!
-				+ "WHERE id = " + id;
-		
-		// 1. 드라이버 로딩
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		}
-	
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String user = "c##mydbms";
-		String pw = "admin";
-		
+				+ "WHERE id = ?";
+
 		try (// 2. 연결 생성
-			Connection con = DriverManager.getConnection(url, user, pw);
+			Connection con = DBUtil.getConnection();
 			// 3. Statement 생성
-			Statement stmt = con.createStatement();
+			PreparedStatement pstmt = con.prepareStatement(sql);
 			){
+				pstmt.setInt(1, Integer.parseInt(id));
+				
 				// 4. 쿼리 실행
-				int row = stmt.executeUpdate(sql);
+				int row = pstmt.executeUpdate();
 
 				// 5. 결과 처리
 				if(row == 1) return true;
