@@ -1,0 +1,90 @@
+// 복잡... 이게 최선인가 XXX
+public String minCat(String a, String b) {
+  if(a.isEmpty() || b.isEmpty()) return "";
+ 
+  if(a.length() > b.length()) {
+    if(b.length() == 1) {
+      return "" + a.charAt(a.length()-1) + b;
+    }
+    else {
+      a = a.substring(a.length() - b.length());
+    }
+  } else {
+    if(a.length() == 1) {
+      return a + b.charAt(b.length()-1);
+    }
+    else {
+      b = b.substring(b.length() - a.length());
+    }
+  }
+  
+  
+  
+  return a + b;
+
+}
+// 선생님 방법 ㅠㅠ
+public String minCat(String a, String b) {
+  int lena = a.length();
+  int lenb = b.length();
+
+  int min = (lena < lenb) ? lena : lenb;
+
+  return a.substring(lena - min) + b.substring(lenb - min);
+}
+
+
+
+
+
+public String deFront(String str) {    
+  
+  if(str.length() >= 1 && str.charAt(0) == 'a'){
+    if(str.length() >= 2 && str.charAt(1) == 'b'){// both
+     return str;
+    } else {// a
+     return str.substring(0, 1) + str.substring(2);// abc -> ac
+    }
+  } else {
+    if(str.length() >= 2 && str.charAt(1) == 'b'){// b
+       return str.substring(1);
+    }
+  }
+  
+  return str.substring(2);
+}
+
+
+// 더 예쁘게?
+public String startWord(String str, String word) {
+  // word matches 
+  if(str.isEmpty()) return "";
+  if(word.length() == 1) return str.substring(0, 1);
+  
+  if(str.indexOf(word) == 0 || str.indexOf(word.substring(1)) == 1){
+    return str.substring(0,1) + word.substring(1);
+  }
+  
+  return "";
+}
+
+
+
+// 더 간결하게
+public String withoutX2(String str) {
+  if(str.isEmpty()) return str;
+
+  if(str.startsWith("xx", 0)){
+    if(str.length() == 2) return "";
+    return str.substring(2);
+  }
+  if(str.indexOf("x") == 0){
+    if(str.length() == 1) return "";
+    return str.substring(1);
+  }
+  if(str.indexOf("x") == 1){
+    return str.substring(0,1) + str.substring(2);
+  }
+  
+  return str;
+}

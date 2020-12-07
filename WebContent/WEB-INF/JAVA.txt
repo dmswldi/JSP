@@ -1,0 +1,19 @@
+.java 파일을 컴파일 -> 자바 가상 머신(JVM)을 두어 .class 파일로 -> 0과 1의 파일로
+
+cmd에 자바 파일 컴파일 : javac .java || java ??  => 실행 java MyJAVA
+
+
+run 단축키 ctrl+F11
+다음 tab ctrl + F6
+이전 tab ctrl + F5
+힌트 ... Ctrl + 1
+
+
+commit & push
+
+clone: 집가서
+eclipse import - git - project from Git - Clone URI
+hithub 코드 복사 : https://github.com/dmswldi/20200929java.git
+local destination: 원하는 dir(eclipse-workspace), 파일 이름 지정
+
+pull

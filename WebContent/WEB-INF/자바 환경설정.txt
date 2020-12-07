@@ -1,0 +1,51 @@
+자바 설치
+
+java jdk 8 -> 8u27(window 64)
+ecplise zip download(release - 2020-03 - R package - Enterprise Edition(win64)
+
+톰캣 설치
+
+tomcat -> downlooad tomcat 9
+
+
+자바 환경설정
+
+시스템 환경변수 편집
+> 맨 아래 환경 변수
+> 시스템 변수 새로 만들기
+> 변수 값 = jdk 폴더 주소 복사
+ 변수 이름 = JAVA_HOME
+> Path 추가 C:\Program Files\Java\jdk1.8.0_261\bin (jdk 폴더/bin 경로)
+ 
+확인
+윈도우+r > cmd > javac
+
+
+톰캣 등록
+New - other에 Server - tomcat 선택 - Browse로 설치된 apache-tomcat 폴더 선택
+
+자바 언어 설정
+General - workspace - other - utf-8
+Web - CSS Files, HTML Files, JSP Files - utf-8
+
+
+
+git scm: 파일 복구
+git bash 실행
+> git config --global user.name '아이디'
+> git config --global user.email '이메일'
+> vscode의 source control
+
+cd Documents/myworkspace/web/
+(master)
+git remote add origin https://github.com/dmswldi/web20200918.git
+git push -u origin master
+> github 로그인
+
+
+마우스 우측 git bash here
+클라우드에 있는 거 하드에 복사
+git clone https://github.com/dmswldi/web20200918.git(내 코드 복사) web
+
+업데이트 받을 때
+$ git pull
