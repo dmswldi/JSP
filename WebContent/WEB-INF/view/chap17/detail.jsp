@@ -12,6 +12,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 $(function(){
+	// 처음 로딩될 때 실행되는 코드
 	$('#modify_btn').click(function(){
 		$('#submit_btn').removeAttr('hidden');
 		$('#submit_btn').show(); //

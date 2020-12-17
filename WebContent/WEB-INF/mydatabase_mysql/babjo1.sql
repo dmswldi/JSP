@@ -34,5 +34,5 @@ values (11, 55, 66, 88, 2);
 select * from bill;
 
 commit;
-
-
+use mydbms;
+select now() from dual;
